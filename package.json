@@ -1,0 +1,11 @@
+{
+  "name": "node-practice",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:wangkaiwd/node-practice.git",
+  "author": "wangkaiwd <1162486176@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^3.0.2"
+  }
+}
