@@ -1,5 +1,5 @@
 const program = require('commander');
-const { add, clear } = require('./index');
+const { add, clear, displayAll } = require('./index');
 program
   .option('-x, --xxx', 'what the x');
 
@@ -16,6 +16,10 @@ program
   .action(clear);
 
 program.parse(process.argv);
+
+if (process.argv.length === 2) {
+  displayAll();
+}
 
 // 操作过程：
 // 1. 随便找一段示例代码(不要太简单)在编辑器里运行

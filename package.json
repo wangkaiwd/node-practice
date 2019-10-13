@@ -6,6 +6,7 @@
   "author": "wangkaiwd <1162486176@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "commander": "^3.0.2"
+    "commander": "^3.0.2",
+    "inquirer": "^7.0.0"
   }
 }
