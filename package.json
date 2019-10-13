@@ -1,7 +1,13 @@
 {
   "name": "node-practice",
   "version": "0.0.1",
-  "main": "cli.js",
+  "main": "index.js",
+  "bin": {
+    "t": "cli.js"
+  },
+  "files": [
+    "*.js"
+  ],
   "repository": "git@github.com:wangkaiwd/node-practice.git",
   "author": "wangkaiwd <1162486176@qq.com>",
   "license": "MIT",
