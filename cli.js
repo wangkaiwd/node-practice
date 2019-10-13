@@ -18,7 +18,6 @@ program
   });
 
 program.parse(process.argv);
-console.log('stuff');
 
 // 操作过程：
 // 1. 随便找一段示例代码(不要太简单)在编辑器里运行

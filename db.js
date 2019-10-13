@@ -25,7 +25,7 @@ const read = (path = dbPath) => {
   });
 };
 
-const write = (path = dbPath, list) => {
+const write = (list, path = dbPath) => {
   list = JSON.stringify(list);
   return new Promise((resolve, reject) => {
     fs.writeFile(path, list, (err) => {
