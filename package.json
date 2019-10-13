@@ -1,6 +1,6 @@
 {
   "name": "node-t-todo-0001",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "bin": {
     "t": "cli.js"
