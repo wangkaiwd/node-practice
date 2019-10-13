@@ -35,4 +35,4 @@ const write = (list, path = dbPath) => {
   });
 };
 
-module.exports = { read, write };
+module.exports = { read, write, dbPath };

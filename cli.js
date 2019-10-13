@@ -1,5 +1,5 @@
 const program = require('commander');
-const add = require('./index');
+const { add, clear } = require('./index');
 program
   .option('-x, --xxx', 'what the x');
 
@@ -13,9 +13,7 @@ program
 program
   .command('clear')
   .description('clear task')
-  .action(() => {
-    console.log('clear');
-  });
+  .action(clear);
 
 program.parse(process.argv);
 

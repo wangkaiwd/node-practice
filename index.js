@@ -1,4 +1,5 @@
 const db = require('./db');
+const fs = require('fs');
 const add = async (title) => {
   title = title.join(' ');
   // 想要的调用方式：
@@ -14,5 +15,10 @@ const add = async (title) => {
   // 分别用Promise和async和await来进行处理结果
   // 相对来说，async和await会看起来更加优雅
 };
+const clear = () => {
+  fs.writeFile(db.dbPath, JSON.stringify([]), (err) => {
+    if (err) {console.log(err);}
+  });
+};
 
-module.exports = add;
+module.exports = { add, clear };
