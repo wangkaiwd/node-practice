@@ -1,6 +1,6 @@
 {
-  "name": "node-practice",
-  "version": "0.0.1",
+  "name": "node-t-todo-0001",
+  "version": "0.0.2",
   "main": "index.js",
   "bin": {
     "t": "cli.js"
