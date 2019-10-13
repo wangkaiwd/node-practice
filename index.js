@@ -22,6 +22,67 @@ const clear = () => {
   });
 };
 
+const markAsCompleted = (list, index) => {
+  list[index].done = true;
+  db.write(list);
+};
+const markAsUnCompleted = (list, index) => {
+  list[index].done = false;
+  db.write(list);
+};
+const updateTitle = (list, index) => {
+  inquirer
+    .prompt({
+      type: 'input',
+      name: 'title',
+      message: '新的任务名称'
+    })
+    .then(answer => {
+      list[index].title = answer.title;
+      db.write(list);
+    });
+};
+
+const deleteTask = (list, index) => {
+  list.splice(index, 1);
+  db.write(list);
+};
+
+const askForCreateTask = (list) => {
+  inquirer
+    .prompt({
+      type: 'input',
+      name: 'title',
+      message: '任务名称'
+    })
+    .then(answer => {
+      list.push({ title: answer.title, done: false });
+      db.write(list);
+    });
+};
+const TASK_OPERATES = [
+  { name: '退出', value: 'quite' },
+  { name: '已完成', value: 'markAsCompleted' },
+  { name: '未完成', value: 'markAsUnCompleted' },
+  { name: '改标题', value: 'updateTitle' },
+  { name: '删除', value: 'deleteTask' }
+];
+const askForOperateTask = (list, index) => {
+  inquirer
+    .prompt({
+      type: 'list',
+      name: 'operate',
+      message: '选择操作？',
+      choices: TASK_OPERATES
+    })
+    .then(answer => {
+      const operateMaps = { markAsCompleted, markAsUnCompleted, updateTitle, deleteTask };
+      const operate = operateMaps[answer.operate];
+      if (typeof operate === 'function') {
+        operate(list, index);
+      }
+    });
+};
 const displayAll = async () => {
   const list = await db.read();
   const choicesList = (list) => {
@@ -44,32 +105,9 @@ const displayAll = async () => {
     .then(answer => {
       const index = Number(answer.index);
       if (index >= 0) {
-        inquirer
-          .prompt({
-            type: 'list',
-            name: 'operate',
-            message: '请选择要操作的任务？',
-            choices: [
-              { name: '退出', operate: 'quite' },
-              { name: '已完成', operate: 'markAsComplete' },
-              { name: '未完成', operate: 'markAsUnComplete' },
-              { name: '改标题', operate: 'updateTitle' },
-              { name: '删除', operate: 'delete' }
-            ]
-          })
-          .then(answer => {
-
-          });
+        askForOperateTask(list, index);
       } else if (index === -2) {
-        inquirer
-          .prompt({
-            type: 'input',
-            name: 'title',
-            message: '任务名称'
-          })
-          .then(answer => {
-            list.push({ title: answer.title, done: false });
-          });
+        askForCreateTask(list);
       }
     });
 };
