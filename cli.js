@@ -1,7 +1,9 @@
+#!/usr/bin/env node
+const pkg = require('./package');
 const program = require('commander');
 const { add, clear, displayAll } = require('./index');
 program
-  .option('-x, --xxx', 'what the x');
+  .version(pkg.version, '-v, --version', 'output the current version');
 
 // Command implemented using action handler (description is supplied separately to `.command`)
 // Returns new command for configuring.
