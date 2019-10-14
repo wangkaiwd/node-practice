@@ -1,9 +1,5 @@
 const fs = jest.genMockFromModule('fs');
 const _fs = jest.requireActual('fs');
-fs.x = () => {
-  console.log('hi');
-  return 'xxx';
-};
 const readMock = {};
 fs.setReadMock = (path, error, data) => {
   readMock[path] = [error, data];
