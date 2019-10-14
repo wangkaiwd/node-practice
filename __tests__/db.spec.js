@@ -8,8 +8,15 @@ describe('db', () => {
     const list2 = await db.read('/xxx');
     expect(list2).toStrictEqual(list1);
   });
-  it('能写文件', () => {
-    expect(db.read).toBeInstanceOf(Function);
+  it('能写文件', async () => {
+    const list = [{ title: '任务yyy', done: false }];
+    let fakeList = null;
+    fs.setWriteMock('/yyy', (path, data, callback) => {
+      fakeList = data;
+      callback(null);
+    });
+    await db.write(list, '/yyy');
+    expect(JSON.stringify(list)).toBe(fakeList);
   });
 });
 
