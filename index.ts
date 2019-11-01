@@ -1,4 +1,4 @@
-import { add } from './api';
+import { add, clear } from './api';
 
 const program = require('commander');
 
@@ -8,6 +8,12 @@ program
 program
   .command('add <taskName>')
   .action((title: string) => {
-    add(title);
+    add(title).then(null);
+  });
+
+program
+  .command('clear')
+  .action(() => {
+    clear();
   });
 program.parse(process.argv);

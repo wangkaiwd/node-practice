@@ -10,7 +10,7 @@ const add = async (title: string) => {
 };
 
 const clear = () => {
-
+  db.write([]).then(null);
 };
 
 export { add, clear };

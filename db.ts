@@ -29,6 +29,5 @@ const write = (data: TaskProp[], filePath: string = dbPath) => {
     });
   });
 };
-
 const db = { read, write };
 export default db;
