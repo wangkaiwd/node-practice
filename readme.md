@@ -5,5 +5,8 @@
 
 ### 功能
 
+### 实现思路
+在用户的`home`目录存储生成的`todos`信息
 
-
+`stackoverflow`关于`node.js`中获取`home`目录的讨论：
+[`Node.js - Find home directory in platform agnostic way`](https://stackoverflow.com/questions/9080085/node-js-find-home-directory-in-platform-agnostic-way)
