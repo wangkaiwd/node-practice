@@ -1,10 +1,12 @@
 // 将操作信息存储到 home dir 下的 .todos 文件中
 
-const add = (title: string) => {
+import db, { TaskProp } from './db';
+
+const add = async (title: string) => {
   // 提前思考如何使用，然后进行实现
-  // const tasks = db.read()
-  // tasks.push({ title, done: false})
-  // db.write(tasks)
+  const tasks: TaskProp[] = await db.read();
+  tasks.push({ title, done: false });
+  await db.write(tasks);
 };
 
 const clear = () => {
