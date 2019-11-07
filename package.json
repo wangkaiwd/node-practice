@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@types/inquirer": "^6.5.0",
     "@types/node": "^12.12.3",
     "ts-node-dev": "^1.0.0-pre.43",
     "typescript": "^3.6.4"
@@ -8,6 +9,7 @@
     "start": "tsnd index.ts"
   },
   "dependencies": {
-    "commander": "^3.0.2"
+    "commander": "^3.0.2",
+    "inquirer": "^7.0.0"
   }
 }

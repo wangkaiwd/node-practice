@@ -33,4 +33,6 @@ const write = (data: TaskProp[], filePath: string = dbPath) => {
   });
 };
 const db = { read, write };
+
+// TODO: how export db object will more elegant
 export default db;

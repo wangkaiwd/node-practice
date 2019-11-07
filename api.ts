@@ -7,6 +7,7 @@ const add = async (title: string) => {
 };
 
 const clear = () => {
+  // TODO: the methods of clear database compare with previous code
   db.write([]).then(null);
 };
 
