@@ -5,12 +5,10 @@
 
 * [`commander`](https://github.com/tj/commander.js): `Node.js`命令行界面完整的解决方案
 * [`inquirer`](https://github.com/SBoudrias/Inquirer.js/): 命令行用户界面一些常用交互
-* `ts-node`
-* `typescript`
+* [`ts-node`](https://github.com/TypeStrong/ts-node): `node.js`的`TypeScript`执行的交互式解析器，支持直接用`node.js`来执行`.ts`代码
+* [`typescript`](https://github.com/microsoft/TypeScript): 可以`JavaScript`代码指定类型
 
 ### 功能
-
-![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/node-ts-todos-display.gif)
 
 * todo add taskName: 添加任务
 * todo clear: 清空所有任务
@@ -92,4 +90,6 @@ tsc -p . -w
 
 
 ### 发布到`npm`
+> 笔者这里使用的是`yarn`来进行发布，`npm`的操作过程是类似的
 
+在发布之前，我们需要一个`npm`账号。如果小伙伴没还没有账号的话可以去官网注册。

@@ -1,15 +1,29 @@
 {
+  "name": "node-todos-cli-011",
+  "version": "0.0.1",
+  "main": "dist/api.js",
   "devDependencies": {
     "@types/inquirer": "^6.5.0",
     "@types/node": "^12.12.3",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.4"
   },
+  "bin": {
+    "todo": "dist/index.js"
+  },
+  "files": [
+    "dist/*/**.js"
+  ],
   "scripts": {
     "start": "ts-node index.ts"
   },
   "dependencies": {
     "commander": "^3.0.2",
     "inquirer": "^7.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wangkaiwd/node-practice"
+  },
+  "license": "MIT"
 }
