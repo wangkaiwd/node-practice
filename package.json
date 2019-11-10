@@ -12,12 +12,13 @@
     "todo": "dist/index.js"
   },
   "files": [
-    "dist/*/**.js"
+    "dist/*/**.js",
+    "typings/*/**.d.ts"
   ],
   "scripts": {
     "start": "ts-node index.ts"
   },
-  "types": "typing/*/**.d.ts",
+  "types": "typings/*/**.d.ts",
   "dependencies": {
     "commander": "^3.0.2",
     "inquirer": "^7.0.0"

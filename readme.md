@@ -102,11 +102,14 @@ tsc -p . -w
     "todo": "dist/index.js"
   },
   "files": [
-    "dist/*/**.js"
-  ]
+    "dist/*/**.js",
+    "typings/*/**.d.ts"
+  ],
+  "types": "typings/*/**.d.ts"
 }
 ```
 * `bin`:
 * `file`: 当你的包作为依赖被安装时所包含的文件(需要上传到`npm`的源代码)
+* `types`: 
 
 需要注意的是，我们要确保`bin`中引入的文件要以`#!/usr/bin/env node`开头，否则脚本不能再`node`环境下运行
