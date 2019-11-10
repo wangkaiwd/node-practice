@@ -2,6 +2,7 @@
 使用`nodejs`实现的`todo`命令行界面。
 
 项目依赖介绍：  
+
 * [`commander`](https://github.com/tj/commander.js): `Node.js`命令行界面完整的解决方案
 * [`inquirer`](https://github.com/SBoudrias/Inquirer.js/): 命令行用户界面一些常用交互
 * `ts-node`
@@ -11,6 +12,9 @@
 
 ![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/node-ts-todos-display.gif)
 
+* todo add taskName: 添加任务
+* todo clear: 清空所有任务
+* todo: 显示所有任务，选择之后可进行增删改查操作
 
 ### 实现思路
 
@@ -45,9 +49,10 @@ const db = {
   }
 };
 ```
-这里主要使用`Promise`来封装,方便之后通过`.then`或者`async/await`来进行使用。并且我们为`readFile`传入了`{flag: 'a+'}`来防止文件不存在时报错。
+这里主要使用`Promise`来封装,方便之后通过`.then`或者`async/await`来进行使用。并且我们为`readFile`传入了`{flag: 'a+'}`来防止文件不存在时报错。所有文件系统标识可以看这里: [文件系统标志](http://nodejs.cn/api/fs.html#fs_file_system_flags)
 
-当然官方也为我们专门提供了`fs.Promise`相关`api`，有兴趣的同学可以了解一些直接使用。
+当然官方也为我们专门提供了`fsPromise`相关`api`，有兴趣的同学可以了解一些直接使用: [传送门](http://nodejs.cn/api/fs.html#fs_fs_promises_api)。
+
 
 ### 调试`TypeScript + Node.js`文件
 
