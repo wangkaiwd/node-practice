@@ -2,18 +2,26 @@
 使用`nodejs`实现的`todo`命令行界面。
 
 项目依赖介绍：  
-* `commander`
-* `inquirer`
+* [`commander`](https://github.com/tj/commander.js): `Node.js`命令行界面完整的解决方案
+* [`inquirer`](https://github.com/SBoudrias/Inquirer.js/): 命令行用户界面一些常用交互
+* `ts-node`
+* `typescript`
 
 ### 功能
 
 ### 实现思路
-在用户的`home`目录存储生成的`todos`信息
 
-`stackoverflow`关于`node.js`中获取`home`目录的讨论：
-[`Node.js - Find home directory in platform agnostic way`](https://stackoverflow.com/questions/9080085/node-js-find-home-directory-in-platform-agnostic-way)
+我们利用`Node.js`的`fs`模块将命令行中添加任务保存到电脑的`home`目录的`.todos`文件中，该文件相当于一个小型数据库。
 
-### 调试`TypeScript`文件
+> `stackoverflow`关于`node.js`中获取`home`目录的讨论：
+  [`Node.js - Find home directory in platform agnostic way`](https://stackoverflow.com/questions/9080085/node-js-find-home-directory-in-platform-agnostic-way)
+
+实现过程中主要使用了`fs.writeFile`和`fs.readFile`这俩个`api`，并对其进行简单封装：  
+```typescript
+
+```
+
+### 调试`TypeScript + Node.js`文件
 
 在开发过程中难免会遇到一些比较复杂的逻辑，需要通过连接调试器来一步步找出问题所在，接下来介绍如何利用`WebStorm`调试`TypeScript + Node.js`的源代码。
 
@@ -48,4 +56,7 @@ tsc -p . -w
 ![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/node-debugger-live-edit.png)
 
 目前笔者用这种方法来进行代码调试，如果你有更好的调试方法，可以留言告诉我，让我们一起进步学习。
+
+
+### 发布到`npm`
 
