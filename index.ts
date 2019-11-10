@@ -1,4 +1,4 @@
-import { add, clear } from './api';
+import { add, clear, showAll } from './api';
 
 const program = require('commander');
 
@@ -7,7 +7,7 @@ program
 
 program
   .command('add <taskName...>')
-  .action((titles:string[]) => {
+  .action((titles: string[]) => {
     add(titles).then(null);
   });
 
@@ -16,5 +16,7 @@ program
   .action(() => {
     clear();
   });
-console.log('index');
+if (typeof process.argv[2] === 'undefined') {
+  showAll().then();
+}
 program.parse(process.argv);

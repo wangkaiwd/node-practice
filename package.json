@@ -2,11 +2,11 @@
   "devDependencies": {
     "@types/inquirer": "^6.5.0",
     "@types/node": "^12.12.3",
-    "ts-node-dev": "^1.0.0-pre.43",
+    "ts-node": "^8.4.1",
     "typescript": "^3.6.4"
   },
   "scripts": {
-    "start": "tsnd index.ts"
+    "start": "ts-node index.ts"
   },
   "dependencies": {
     "commander": "^3.0.2",
