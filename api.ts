@@ -9,7 +9,6 @@ export const add = async (titles: string[]) => {
 };
 
 export const clear = async () => {
-  // TODO: the methods of clear database compare with previous code
   await db.write([]);
   console.log('清空成功');
 };

@@ -32,7 +32,27 @@ const write = (data: TaskProp[], filePath: string = dbPath) => {
     });
   });
 };
-const db = { read, write };
-
-// TODO: how export db object will more elegant
+const db = {
+  read (filePath: string = dbPath) {
+    return new Promise<TaskProp[]>((resolve, reject) => {
+      // flag
+      // default: r, open file for reading. An exception occurs if the file does not exist
+      // a+ : open file for reading and appending. The file is created if it does not exist
+      fs.readFile(filePath, { flag: 'a+' }, (err, data) => {
+        if (err) return reject(err);
+        const tasks = data.toString() ? JSON.parse(data.toString()) : [];
+        resolve(tasks);
+      });
+    });
+  },
+  write (data: TaskProp[], filePath: string = dbPath) {
+    return new Promise((resolve, reject) => {
+      const dataString = JSON.stringify(data);
+      fs.writeFile(filePath, dataString, (err) => {
+        if (err) return reject(err);
+        resolve();
+      });
+    });
+  }
+};
 export default db;
