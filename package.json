@@ -17,6 +17,7 @@
   "scripts": {
     "start": "ts-node index.ts"
   },
+  "types": "typing/*/**.d.ts",
   "dependencies": {
     "commander": "^3.0.2",
     "inquirer": "^7.0.0"
