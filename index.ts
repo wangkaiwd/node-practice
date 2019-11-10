@@ -6,9 +6,9 @@ program
   .option('-x, --xxx', 'output extra debugging');
 
 program
-  .command('add <taskName>')
-  .action((title: string) => {
-    add(title).then(null);
+  .command('add <taskName...>')
+  .action((titles:string[]) => {
+    add(titles).then(null);
   });
 
 program
@@ -16,4 +16,5 @@ program
   .action(() => {
     clear();
   });
+console.log('index');
 program.parse(process.argv);

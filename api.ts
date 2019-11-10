@@ -1,6 +1,7 @@
 import db, { TaskProp } from './db';
 
-const add = async (title: string) => {
+const add = async (titles: string[]) => {
+  const title = titles.join(' ');
   const tasks: TaskProp[] = await db.read();
   tasks.push({ title, done: false });
   await db.write(tasks);
