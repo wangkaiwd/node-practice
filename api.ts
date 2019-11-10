@@ -8,9 +8,10 @@ export const add = async (titles: string[]) => {
   await db.write(tasks);
 };
 
-export const clear = (): void => {
+export const clear = async () => {
   // TODO: the methods of clear database compare with previous code
-  db.write([]).then(null);
+  await db.write([]);
+  console.log('清空成功');
 };
 
 interface ChoiceProps {
@@ -37,7 +38,12 @@ const markAsUnComplete = (list: TaskProp[], index: number) => {
   db.write(list).then();
 };
 const updateTitle = (list: TaskProp[], index: number) => {
-  askForNewTask(list).then(title => list[index].title = title);
+  askForNewTask(list).then(title => {
+    list[index].title = title;
+    db.write(list).then(() => {
+      console.log('更新成功');
+    });
+  });
 };
 const deleteTask = (list: TaskProp[], index: number) => {
   list.splice(index, 1);
@@ -92,8 +98,8 @@ export const showAll = async () => {
       askForNewTask(list)
         .then(title => {
           list.push({ title, done: false });
-          db.write(list);
-        });
+          return db.write(list);
+        }).then(() => {console.log('添加成功');});
     }
   });
 };
