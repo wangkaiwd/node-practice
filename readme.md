@@ -90,7 +90,8 @@ tsc -p . -w
 
 
 ### 发布到`npm`
-> 笔者这里使用的是`yarn`来进行发布，`npm`的操作过程是类似的
+> 笔者这里使用的是`yarn`来进行发布，`npm`的操作过程是类似的  
+> 所有`tsconfig.json`的配置描述在这里：[传送门](http://json.schemastore.org/tsconfig)
 
 首先，我们需要一个`npm`账号。如果小伙伴没还没有账号的话可以去官网注册。
 
