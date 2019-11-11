@@ -157,6 +157,7 @@ nrm use npm
 ```shell script
 yarn login
 ```
+
 接下来会提示我们输入用户名和邮箱，按照提示输入即可：  
 ![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/ts-node-todo-yarn-login.png)
 
@@ -166,6 +167,7 @@ yarn login
 ```shell script
 yarn publish
 ```
+
 之后会提示我们输入新的版本号(第一个次可以不输)，要保证和之前已有版本号不能重名
 ![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/node-ts-todo-publish.png)
 
@@ -180,10 +182,13 @@ yarn publish
 ```shell script
 yarn global add todos-cli-node-test
 ```
+
 然后执行脚本提供的命令： 
+
 ```shell script
 todo
 ```
+
 ![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/node-ts-todo-install-success.png)
 
 可以看到成功显示了任务列表。
