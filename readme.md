@@ -164,3 +164,21 @@ yarn publish
 这是由于我们的报名触发了`npm`的垃圾邮件检测，我们需要重新更改`name`属性，并且尽量避免一些常用名称和数字
 
 #### 4. 在本机安装使用
+使用`yarn`全局安装我们发布到`npm`官网上的`package`:  
+```shell script
+yarn global add todos-cli-node-test
+```
+然后执行脚本提供的命令： 
+```shell script
+todo
+```
+![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/node-ts-todo-install-success.png)
+
+可以看到成功显示了任务列表。
+
+到这里我们成功将一个`Node.js + TypeScript`命令行工具发布到`npm`，并且可以在电脑中下载通过全局命令来直接使用。
+
+### 结语
+文章源代码在这里： [戳我](https://github.com/wangkaiwd/node-practice)
+
+开源不易，如果本文对你有帮助的话可以点一下`star`，这是对作者最大的鼓励！
