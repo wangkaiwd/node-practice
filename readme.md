@@ -75,11 +75,9 @@ const db = {
 ```
 
 接下来我们需要将`TypeScript`文件实时编译为`JavaScript`文件：  
-
-```shell script
+```text
 tsc -p .
 ```
-
 而我们用`WebStorm`调试的文件其实是编译生成的`JavaScript`文件，`Debug configuration`配置如下：  
 ![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/webstorm-debug-ts-configuration.png)
 
@@ -88,11 +86,9 @@ tsc -p .
 经过在`Google`一番探索，发现了`WebStorm`的`live edit`功能，具体讨论链接在这里：[传送门](https://stackoverflow.com/a/45716154/11720536)
 
 首先，我们开启实时编译`TypeScript`文件：
-
-```shell script
+```text
 tsc -p . -w
 ```
-
 然后我们配置`WebStorm`的`Live Edit`功能：
 ![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/node-debugger-live-edit.png)
 
@@ -145,29 +141,24 @@ tsc -p . -w
 > 这里使用[`nrm`](https://github.com/Pana/nrm)对`npm`源进行管理，有需要的小伙伴可以自行安装 
 
 在命令行中执行如下命令：
-
-```shell script
+```text
 nrm ls
 nrm use npm
 ```
 
 #### 2. 使用`yarn`登录`npm`
 发布之前我们需要进行登录：  
-
-```shell script
+```text
 yarn login
 ```
-
 接下来会提示我们输入用户名和邮箱，按照提示输入即可：  
 ![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/ts-node-todo-yarn-login.png)
 
 #### 3. 发布到`npm`
 在命令行输入：  
-
-```shell script
+```text
 yarn publish
 ```
-
 之后会提示我们输入新的版本号(第一个次可以不输)，要保证和之前已有版本号不能重名
 ![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/node-ts-todo-publish.png)
 
@@ -178,17 +169,13 @@ yarn publish
 
 #### 4. 在本机安装使用
 使用`yarn`全局安装我们发布到`npm`官网上的`package`:  
-
-```shell script
+```text
 yarn global add todos-cli-node-test
 ```
-
 然后执行脚本提供的命令： 
-
-```shell script
+```text
 todo
 ```
-
 ![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/node-ts-todo-install-success.png)
 
 可以看到成功显示了任务列表。
