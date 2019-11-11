@@ -166,7 +166,7 @@ yarn publish
 如果你的`package.json`中的`name`写的比较随意的话，会碰到这样的报错：
 ![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/node-ts-todo-publish-error.png)
 
-这是由于我们的报名触发了`npm`的垃圾邮件检测，我们需要重新更改`name`属性，并且尽量避免一些常用名称和数字
+这是由于我们的包名触发了`npm`的垃圾邮件检测，我们需要重新更改`name`属性，并且尽量避免一些常用名称和数字
 
 #### 4. 在本机安装使用
 使用`yarn`全局安装我们发布到`npm`官网上的`package`:  
@@ -186,4 +186,4 @@ todo
 ### 结语
 文章源代码在这里： [戳我](https://github.com/wangkaiwd/node-practice)
 
-开源不易，如果本文对你有帮助的话可以点一下`star`，这是对作者最大的鼓励！
+开源不易，如果本文对你有帮助的话可以点一下`star`，这将是对作者最大的鼓励。
