@@ -1,5 +1,9 @@
-## 项目介绍
-使用`nodejs`实现的`todo`命令行界面。
+## 概述
+本文会通过实现一个的`todo`命令行工具来一步步带你学习以下知识：
+* 调试`Node.js + TypeScript`应用
+* `fs.readFile`和`fs.writeFile`的使用
+* 使用`Node.js + TypeScript`开发命令行工具
+* 发布`Node.js + TypeScript`项目到`npm`
 
 项目依赖介绍：  
 
@@ -9,7 +13,8 @@
 * [`typescript`](https://github.com/microsoft/TypeScript): 可以`JavaScript`代码指定类型
 
 ### 功能
-
+首先看一下项目的最终效果：  
+![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/node-ts-todos-gif-display.gif)
 
 * todo add taskName: 添加任务
 * todo clear: 清空所有任务
@@ -50,7 +55,7 @@ const db = {
 ```
 这里主要使用`Promise`来封装,方便之后通过`.then`或者`async/await`来进行使用。并且我们为`readFile`传入了`{flag: 'a+'}`来防止文件不存在时报错。所有文件系统标识可以看这里: [文件系统标志](http://nodejs.cn/api/fs.html#fs_file_system_flags)
 
-当然官方也为我们专门提供了`fsPromise`相关`api`，有兴趣的同学可以了解一些直接使用: [传送门](http://nodejs.cn/api/fs.html#fs_fs_promises_api)。
+当然官方也为我们专门提供了`fsPromise`相关`api`，有兴趣的同学可以了解一下直接使用: [传送门](http://nodejs.cn/api/fs.html#fs_fs_promises_api)。
 
 之后的增删改查逻辑都是以这俩个方法为基础，并结合`commander`和`inquirer`。
 
