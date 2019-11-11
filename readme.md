@@ -13,8 +13,8 @@
 * [`typescript`](https://github.com/microsoft/TypeScript): 可以`JavaScript`代码指定类型
 
 ### 功能
-首先看一下项目的最终效果：  
-![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/node-ts-todos-gif-display.gif)
+首先看一下实现效果：  
+![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/node-ts-todos-cli-demonstrate001.gif)
 
 * todo add taskName: 添加任务
 * todo clear: 清空所有任务
