@@ -128,4 +128,27 @@ tsc -p . -w
 * `declaration`: 是否生成编译后`JavaScript`对应的类型声明文件
 * `declarationDir`: 指定类型声明文件的输出目录
 
-需要注意的是，我们要确保`bin`中引入的文件要以`#!/usr/bin/env node`开头，否则脚本不能再`node`环境下运行
+需要注意的是，我们要确保`bin`中引入的文件要以`#!/usr/bin/env node`开头，否则脚本不能在`node`环境下运行
+
+准备工作完成后，我们正式开始发布。
+
+#### 1. 切换到`npm`官方源
+> 这里使用[`nrm`](https://github.com/Pana/nrm)对`npm`源进行管理，有需要的小伙伴可以自行安装 
+
+在命令行中执行如下命令：
+```shell script
+nrm ls
+nrm use npm
+```
+
+#### 2. 使用`yarn`登录`npm`
+发布之前我们需要进行登录：  
+```shell script
+yarn login
+```
+接下来会提示我们输入用户名和邮箱，按照提示输入即可：  
+![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/ts-node-todo-yarn-login.png)
+
+#### 3. 发布到`npm`
+
+#### 4. 在本机安装使用
