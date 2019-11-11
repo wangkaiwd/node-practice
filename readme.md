@@ -1,5 +1,6 @@
 ## 概述
 本文会通过实现一个的`todo`命令行工具来一步步带你学习以下知识：
+
 * 调试`Node.js + TypeScript`应用
 * `fs.readFile`和`fs.writeFile`的使用
 * 使用`Node.js + TypeScript`开发命令行工具
@@ -74,6 +75,7 @@ const db = {
 ```
 
 接下来我们需要将`TypeScript`文件实时编译为`JavaScript`文件：  
+
 ```shell script
 tsc -p .
 ```
@@ -86,6 +88,7 @@ tsc -p .
 经过在`Google`一番探索，发现了`WebStorm`的`live edit`功能，具体讨论链接在这里：[传送门](https://stackoverflow.com/a/45716154/11720536)
 
 首先，我们开启实时编译`TypeScript`文件：
+
 ```shell script
 tsc -p . -w
 ```
@@ -142,6 +145,7 @@ tsc -p . -w
 > 这里使用[`nrm`](https://github.com/Pana/nrm)对`npm`源进行管理，有需要的小伙伴可以自行安装 
 
 在命令行中执行如下命令：
+
 ```shell script
 nrm ls
 nrm use npm
@@ -149,6 +153,7 @@ nrm use npm
 
 #### 2. 使用`yarn`登录`npm`
 发布之前我们需要进行登录：  
+
 ```shell script
 yarn login
 ```
@@ -157,6 +162,7 @@ yarn login
 
 #### 3. 发布到`npm`
 在命令行输入：  
+
 ```shell script
 yarn publish
 ```
@@ -170,6 +176,7 @@ yarn publish
 
 #### 4. 在本机安装使用
 使用`yarn`全局安装我们发布到`npm`官网上的`package`:  
+
 ```shell script
 yarn global add todos-cli-node-test
 ```
