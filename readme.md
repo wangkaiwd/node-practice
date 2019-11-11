@@ -10,7 +10,6 @@
 
 ### 功能
 
-![](http://media.w3.org/2010/05/sintel/trailer.mp4)
 
 * todo add taskName: 添加任务
 * todo clear: 清空所有任务
@@ -102,11 +101,11 @@ tsc -p . -w
 ```json
 {
   "bin": {
-    "todo": "dist/index.js"
+    "todo": "dist/cli.js"
   },
   "files": [
-    "dist/*/**.js",
-    "typings/*/**.d.ts"
+    "dist/**/*.js",
+    "typings/**/*.d.ts"
   ],
   "types": "typings/*/**.d.ts"
 }
@@ -152,5 +151,16 @@ yarn login
 ![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/ts-node-todo-yarn-login.png)
 
 #### 3. 发布到`npm`
+在命令行输入：  
+```shell script
+yarn publish
+```
+之后会提示我们输入新的版本号(第一个次可以不输)，要保证和之前已有版本号不能重名
+![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/node-ts-todo-publish.png)
+
+如果你的`package.json`中的`name`写的比较随意的话，会碰到这样的报错：
+![](https://raw.githubusercontent.com/wangkaiwd/drawing-bed/master/node-ts-todo-publish-error.png)
+
+这是由于我们的报名触发了`npm`的垃圾邮件检测，我们需要重新更改`name`属性，并且尽量避免一些常用名称和数字
 
 #### 4. 在本机安装使用
