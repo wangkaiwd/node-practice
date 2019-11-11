@@ -1,6 +1,6 @@
 {
   "name": "todos-cli-node-test",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "dist/api.js",
   "devDependencies": {
     "@types/inquirer": "^6.5.0",
@@ -9,14 +9,15 @@
     "typescript": "^3.6.4"
   },
   "bin": {
-    "todo": "dist/cli.js"
+    "todo11": "dist/cli.js"
   },
   "files": [
     "dist/*/**.js",
     "typings/*/**.d.ts"
   ],
   "scripts": {
-    "start": "ts-node cli.ts"
+    "start": "ts-node cli.ts",
+    "build": "rm -rf dist typings && tsc -p ."
   },
   "types": "typings/*/**.d.ts",
   "dependencies": {
