@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { add, clear, showAll } from './api';
 import pkg from './package.json';
 

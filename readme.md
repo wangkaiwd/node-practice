@@ -51,6 +51,7 @@ const db = {
 
 当然官方也为我们专门提供了`fsPromise`相关`api`，有兴趣的同学可以了解一些直接使用: [传送门](http://nodejs.cn/api/fs.html#fs_fs_promises_api)。
 
+之后的增删改查逻辑都是以这俩个方法为基础，并结合`commander`和`inquirer`。
 
 ### 调试`TypeScript + Node.js`文件
 
@@ -95,7 +96,7 @@ tsc -p . -w
 
 首先，我们需要一个`npm`账号。如果小伙伴没还没有账号的话可以去官网注册。
 
-在正式发布之前，我们还需要在`package.json`中添加一些配置：  
+在正式发布之前，我们还需要在`package.json`和`tsconfig.json`中添加或修改一些配置：  
 ```json
 {
   "bin": {
@@ -108,8 +109,23 @@ tsc -p . -w
   "types": "typings/*/**.d.ts"
 }
 ```
-* `bin`:
+
+* `bin`: 可以让执行自定义的快捷命令，全局安装后可直接使用
 * `file`: 当你的包作为依赖被安装时所包含的文件(需要上传到`npm`的源代码)
-* `types`: 
+* `types`: 编译的`JavaScript`文件对应的类型声明文件 
+
+```json
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "declaration": true,
+    "declarationDir": "typings"
+  }
+}
+```
+
+* `outDir`: 指定编译生成的`JavaScript`文件存放的目录
+* `declaration`: 是否生成编译后`JavaScript`对应的类型声明文件
+* `declarationDir`: 指定类型声明文件的输出目录
 
 需要注意的是，我们要确保`bin`中引入的文件要以`#!/usr/bin/env node`开头，否则脚本不能再`node`环境下运行

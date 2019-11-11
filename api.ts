@@ -17,6 +17,7 @@ interface ChoiceProps {
   name: string;
   value: number | string;
 }
+
 type Actions = 'markAsCompleted' | 'markAsUnComplete' | 'updateTitle' | 'deleteTask'
 type ActionMap = {
   [K in Actions]: (list: TaskProp[], index: number) => void
